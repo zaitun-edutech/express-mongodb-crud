@@ -1,52 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
 
-    <title> <%= title %>  </title>
+    <title><%= title %></title>
   </head>
   <body>
-      <div class="container">
-          <div class="row">
-              <div class="col-md-8">
-              <h1><%= title %></h1>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="text-center">
+            <h1><%= title %></h1>
             <p>Welcome to <%= title %></p>
-            <form action='pegawai/tambah' method='post' role='form'   >
-                <div class='form-group'>
-                 <label for='exampleInputEmail'>Nama</label>
-                 <input type='text' name='nama' class='form-control' placeholder='Enter Nama' required>
-                </div>
-                <div class='form-group'>
-                 <label for='exampleInputEmail'>Email</label>
-                 <input type='email' name='email' class='form-control' placeholder='Email' required>
-                </div>
-                <div class='form-group'>
-                 <label for='exampleInputEmail'>Umur</label>
-                 <input type='number' name='umur' class='form-control' placeholder='Umur' required>
-                </div>
-                <div class='form-group'>
-                 <label for='exampleInputEmail'>Kecamatan</label>
-                 <select type='text' name='id_kec' class='form-control' required>
-                  <% for(var i = 0; i < kecamatan.length; i++){ %>
-                  <option value='<%= kecamatan[i]._id %>' ><%= kecamatan[i].nama %></option>
-                  <% } %>
-                 </select>
-                </div> 
-                <button type='submit' class='btn btn-primary'>Submit</button>
-
           </div>
+          <div class="card p-4">
+            <form action="pegawai/tambah" method="post" role="form">
+              <div class="form-group">
+                <label for="exampleInputEmail">Nama</label>
+                <input
+                  type="text"
+                  name="nama"
+                  class="form-control"
+                  placeholder="Enter Nama"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail">Umur</label>
+                <input
+                  type="number"
+                  name="umur"
+                  class="form-control"
+                  placeholder="Umur"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail">Kecamatan</label>
+                <select
+                  type="dropdown"
+                  name="id_kec"
+                  class="form-control"
+                  required
+                >
+                  <option value="">--pilih--</option>
+                  <% for(var i = 0; i < kecamatan.length; i++){ %>
+                  <option value="<%= kecamatan[i]._id %>">
+                    <%= kecamatan[i].nama %>
+                  </option>
+                  <% } %>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary mt-4">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
-  </div>
-  
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

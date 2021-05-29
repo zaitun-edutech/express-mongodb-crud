@@ -22,49 +22,56 @@
     <title><%= title %></title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p>Data Pegawai</p>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1><%= title %></h1>
+          <p>Welcome to <%= title %></p>
+          <p>Data Pegawai</p>
 
-    <a href="/pegawai" class="btn btn-primary">+Tambah Data Pegawai</a>
+          <a href="/pegawai" class="btn btn-primary">+Tambah Data Pegawai</a>
 
-    <a href="/kecamatan" class="btn btn-info me-0">+Tambah Data Kecamatan</a>
+          <a href="/kecamatan" class="btn btn-info me-0"
+            >+Tambah Data Kecamatan</a
+          >
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nama</th>
-          <th scope="col">Email</th>
-          <th scope="col">Umur</th>
-          <th scope="col">Kecamatan</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% var no=1 %> <% for(var i = 0; i < pegawai.length; i++){ %>
-        <tr>
-          <th scope="row"><%= no++ %></th>
-          <td><%= pegawai[i].nama %></td>
-          <td><%= pegawai[i].email %></td>
-          <td><%= pegawai[i].umur %></td>
-          <td><%= pegawai[i].id_kec.nama %></td>
-          <td>
-            <a href="/pegawai/edit/<%= pegawai[i]._id %>"
-              ><i class="far fa-edit text-info"></i
-            ></a>
-            <a
-              href="/pegawai/delete/<%= pegawai[i]._id %>"
-              onclick="return confirm('Apa kamu yakin akan menghapus data ini')"
-              ><i class="fas fa-trash text-danger"></i
-            ></a>
-          </td>
-        </tr>
-        <% } %>
-      </tbody>
-    </table>
-
-    <a href="/logout" class="btn btn-primary badge">LOGOUT</a>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Email</th>
+                <th scope="col">Umur</th>
+                <th scope="col">Kecamatan</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% var no=1 %> <% for(var i = 0; i < pegawai.length; i++){ %>
+              <tr>
+                <th scope="row"><%= no++ %></th>
+                <td><%= pegawai[i].nama %></td>
+                <td><%= pegawai[i].email %></td>
+                <td><%= pegawai[i].umur %></td>
+                <td><%= pegawai[i].id_kec.nama %></td>
+                <td>
+                  <a href="/pegawai/edit/<%= pegawai[i]._id %>"
+                    ><i class="far fa-edit text-info"></i
+                  ></a>
+                  <a
+                    href="/pegawai/delete/<%= pegawai[i]._id %>"
+                    onclick="return confirm('Apa kamu yakin akan menghapus data ini')"
+                    ><i class="fas fa-trash text-danger"></i
+                  ></a>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+          <a href="/logout" class="btn btn-primary badge">LOGOUT</a>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
