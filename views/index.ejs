@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384 B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>Data Pegawai</p>
+
+    <a href="/pegawai" class="btn btn-primary">+Tambah Data Pegawai</a>
+
+    <a href="/kecamatan" class="btn btn-info me-0">+Tambah Data Kecamatan</a>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nama</th>
+          <th scope="col">Email</th>
+          <th scope="col">Umur</th>
+          <th scope="col">Kecamatan</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% var no=1 %> <% for(var i = 0; i < pegawai.length; i++){ %>
+        <tr>
+          <th scope="row"><%= no++ %></th>
+          <td><%= pegawai[i].nama %></td>
+          <td><%= pegawai[i].email %></td>
+          <td><%= pegawai[i].umur %></td>
+          <td><%= pegawai[i].id_kec.nama %></td>
+          <td>
+            <a href="/pegawai/edit/<%= pegawai[i]._id %>"
+              ><i class="far fa-edit text-info"></i
+            ></a>
+            <a
+              href="/pegawai/delete/<%= pegawai[i]._id %>"
+              onclick="return confirm('Apa kamu yakin akan menghapus data ini')"
+              ><i class="fas fa-trash text-danger"></i
+            ></a>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <a href="/logout" class="btn btn-primary badge">LOGOUT</a>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
