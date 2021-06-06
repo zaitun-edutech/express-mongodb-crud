@@ -36,7 +36,7 @@ mongoose
   .then(() => console.log("berhasil terhubung"))
   .catch((err) => console.error(err));
 
-console.log("mongodb terkoneksi");
+// console.log("mongodb terkoneksi");
 
 app.use("/", indexRouter);
 app.use("/kecamatan", kecRouter);
