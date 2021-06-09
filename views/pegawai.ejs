@@ -16,6 +16,7 @@
     <title><%= title %></title>
   </head>
   <body>
+    <%- include('partials/nav') %>
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-8">
@@ -63,7 +64,9 @@
                   class="form-control"
                   required
                 >
-                  <option value="">--pilih--</option>
+                  <option class="dropdown dropdown-toggle" value="">
+                    --pilih--
+                  </option>
                   <% for(var i = 0; i < kecamatan.length; i++){ %>
                   <option value="<%= kecamatan[i]._id %>">
                     <%= kecamatan[i].nama %>

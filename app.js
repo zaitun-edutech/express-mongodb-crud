@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var flash = require("express-flash");
 var session = require("express-session");
+// var expressLayouts = require("express-ejs-layouts");
 
 var indexRouter = require("./routes/index");
 var kecRouter = require("./routes/kecamatan");
@@ -16,6 +17,7 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// app.use(expressLayouts);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
