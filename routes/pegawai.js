@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var pegawai = require("../controllers/PegawaiController.js");
 var kecamatan = require("../models/Kecamatan.js");
 
-router.get("/", function (req, res) {
+router.get("/", function (req, res, next) {
   kecamatan
     .find({}, function (err, kec) {
       console.log(kec);
